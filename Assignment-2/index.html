@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Selection</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="navigation-bar">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <!-- Navbar content -->
+            <div class="container-fluid">
+                <div class="nav-logo" style="padding-left: 100px;">
+                    <a class="navbar-brand" href="#"><h1 style="color:yellowgreen">Players Arena</h1></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto gap-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Players</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="mt-5 mb-5">
+        <form class="col-md-6 mx-auto">
+            <div class="input-group">
+                <input id="player-input" type="text" class="form-control bg-light me-2 rounded-2"
+                    placeholder="Search Player Here..." aria-label="Search" />
+                <div class="input-group-append">
+                    <button id="player-submit" class="btn btn-outline-danger" type="button">Search</button>
+                </div>
+            </div>
+        </form>
+        <h4 id="playerNotFound" class="text-center mt-5"></h4>
+    </section>
+
+    <main>
+        <section class="players">
+            <div class="row d-flex">
+                <div class="col-sm-12 col-md-9 order-md-1">
+                    <div id="allPlayers"
+                        class="row row-cols-1 row-cols-md-3 g-4 border border-success rounded p-3 my-2">
+                        <!-- <div class="col">
+                            <div class="card border rounded-3 border-black">
+                                <img src="./ussrws1479842265.jpg" class="img-fluid rounded-3" />
+                                <div class="card-body">
+                                    <h3 class="player-name text-center">Cafu</h3>
+                                    <div class="player-description">
+                                        <h5>Team: Brazil</h5>
+                                        <p class="">Nationality: Brazil</p>
+                                        <p class="">Sport Type: Football</p>
+                                        <p class="">Position: Right-back</p>
+                                    </div>
+                                    <hr>
+                                    <div class="players-social d-flex justify-content-between align-items-center mb-1">
+                                        <div class="social-text">
+                                            <h5>Player's Social Handle: </h5>
+                                        </div>
+                                        <div class="social-icons">
+                                            <a href="#"><i class="fa-brands fa-facebook" style="font-size:30px;"></i></a>
+                                            <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:30px;"></i></a>
+                                            <a href="#"><i class="fa-brands fa-instagram" style="font-size:30px;"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <button onclick="" class="btn btn-info w-50">Details</button>
+                                    <button onclick="" class="btn btn-success w-40" id="add-player">Add to XI!</button>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-3 order-md-2">
+                    <div class="border rounded border-white my-2">
+                        <h3 class="text-center text-info">Selected Players</h3>
+                        <hr>
+                        <h5>Number of selected players: <span class="player-number"></span></h5>
+                        <div class="row row-cols-2 row-cols-md-2 p-2 bg-info" id="squad-players">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="searchedPlayersinfo" class="row">
+
+        </section>
+        <section class="modal-part">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-dark border border-3 border-info">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-white" id="singlePlayerTitle">player name</h1>
+                        </div>
+                        <div id="singlePlayerbody" class="modal-body p-0 bg-green">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <script src="app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>
