@@ -64,8 +64,39 @@ const showPlayerDetails = (playerID) => {
     fetch(`https://www.thesportsdb.com/api/v1/json/3/lookupplayer.php?id=${playerID}`)
         .then(res => res.json())
         .then(data => {
-            viewSinglePlayer(data.player[0]);
+            viewSinglePlayer(data.players[0]);
         })
+}
+// const showMealDetails = data => {
+//     const meal=data.meals[0];
+//     const mealPhoto = meal.strMealThumb;
+//     const mealName = meal.strMeal;
+
+//     const mealDetailsSection = document.getElementById('meal-details-section');
+//     mealDetailsSection.innerHTML = `
+//         <div id="meal-details" class="card border-0 shadow col-xm-12 col-sm-12 col-md-6" style="border-radius: 10px; width: 19.5rem;">
+//                 <img src="${mealPhoto}" class="card-img-top" style="width: 18rem; border-radius: 10px 10px 0 0" alt="...">
+//                 <div class="card-body">
+//                     <h3 class="card-title text-center my-1">${mealName}</h3>
+//                     <h5 class="card-title text-center text-success">Category: ${meal.strCategory} </h5>
+//                     <hr>
+//                     <p class="card-text">${meal.strInstructions.slice(0, 248)}</p>
+//                     <div id="meal-ingredients"></div>
+//                 </div>
+//             </div>
+//     `
+//     const mealIngredients = document.getElementById('meal-ingredients');
+// }
+
+// For onclick() in the div section!
+const getMealDetails = mealID => {
+    const mealDetailsSection = document.getElementById('meal-details-section');
+    mealDetailsSection.innerHTML = ``;
+
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+    fetch(url)
+        .then(response => response.json())
+        .then(data => showMealDetails(data));
 }
 
 const viewSinglePlayer = (player) => {
